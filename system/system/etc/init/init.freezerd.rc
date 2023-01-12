@@ -1,0 +1,12 @@
+
+#Nubia add for freezer
+service freezerd /system/bin/freezerd
+    class main
+    user root
+    group root
+
+on init
+    start freezerd
+#Nubia add end
+
+

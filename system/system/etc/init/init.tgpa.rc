@@ -1,0 +1,17 @@
+# Nubia add begin for tgpa
+on init
+    #nubia begin add for TGPA
+    mkdir /dev/cpuset/bigcluster
+    copy /dev/cpuset/cpus /dev/cpuset/bigcluster/cpus
+    copy /dev/cpuset/mems /dev/cpuset/bigcluster/mems
+
+    mkdir /dev/cpuset/littlecluster
+    copy /dev/cpuset/cpus /dev/cpuset/littlecluster/cpus
+    copy /dev/cpuset/mems /dev/cpuset/littlecluster/mems
+
+    chown system system /dev/cpuset/bigcluster
+    chown system system /dev/cpuset/littlecluster
+    chmod 0666 /dev/cpuset/littlecluster/cgroup.procs
+    #nubia add for TGPA end
+
+# Nubia add end

@@ -1,0 +1,31 @@
+on post-fs
+    restorecon /sys/kernel/lcd_enhance/cabc
+    restorecon /sys/kernel/lcd_enhance/dfps
+    restorecon /sys/kernel/lcd_enhance/hbm_mode
+    restorecon /sys/kernel/lcd_enhance/panel_firmware_id
+    restorecon /sys/kernel/lcd_enhance/aod_brightness
+    restorecon /sys/kernel/lcd_enhance/lhbm_mode
+    restorecon /sys/kernel/lcd_enhance/bl_limit
+    restorecon /sys/kernel/lcd_enhance/hbm_state
+    restorecon /sys/kernel/lcd_enhance/hbm_feedback
+
+    restorecon /sys/kernel/lcd_enhance/edid_modes
+    restorecon /sys/kernel/lcd_enhance/hpd
+    restorecon /sys/kernel/lcd_enhance/selected_edid
+    restorecon /sys/kernel/usb_dp_enhance/link_statue
+
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/enable
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/virtual_tp
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/fpswitch
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/bsp_mode
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/fp
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/chip_info
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/prevention
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/sensitivity
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/open_sensitivity
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/separation
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/rate
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/levelregion
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/highrate
+    restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/open_prevention
+    restorecon /sys/kernel/tp_node/fp_mode

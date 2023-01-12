@@ -1,0 +1,17 @@
+#Nubia add for fuse passthrough begin
+on post-fs-data
+    # Prepare directories for nubia pass through processes
+    mkdir /mnt/nu_pass_through 0700 root root
+    mkdir /mnt/nu_pass_through/0 0770 root everybody
+    mkdir /mnt/nu_pass_through/0/self 0770 root everybody
+    mkdir /mnt/nu_pass_through/0/emulated 0770 root everybody
+    mkdir /mnt/nu_pass_through/0/emulated/0 0770 root everybody
+
+	chown system system /sys/nubia_bypass_acl/app_list
+	chown system system /sys/nubia_bypass_acl/app_list_add
+	chown system system /sys/nubia_bypass_acl/app_list_del
+	chown system system /sys/nubia_bypass_acl/bypass_acl_uid_list
+	chown system system /sys/nubia_bypass_acl/debug_nb_app_list
+	chown system system /sys/nubia_bypass_acl/enable
+
+#Nubia add end

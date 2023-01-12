@@ -1,0 +1,18 @@
+service bootanim /system/bin/bootanimation
+    class core animation
+    user system
+    group graphics audio
+    disabled
+    oneshot
+    writepid /dev/stune/top-app/tasks
+    ioprio rt 0
+    task_profiles MaxPerformance
+service shutdownanim /system/bin/bootanimation shut
+    class core animation
+    user graphics
+    group graphics audio
+    disabled
+    oneshot
+    writepid /dev/stune/top-app/tasks
+    ioprio rt 0
+    task_profiles MaxPerformance

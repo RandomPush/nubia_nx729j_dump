@@ -1,0 +1,6 @@
+
+on property:ro.vendor.nfc.chiptype=*
+    setprop ro.sys.nfc.chiptype ${ro.vendor.nfc.chiptype}
+	
+on property:sys.nfc.request.stat=*
+   setprop vendor.nfc.request.stat ${sys.nfc.request.stat}

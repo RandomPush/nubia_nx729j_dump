@@ -1,0 +1,12 @@
+service nubia_dc_bright_ser /system/bin/nubia_dc_bright_ser
+    class core
+    user root
+    group root system
+    seclabel u:r:nubia_dc_bright_ser:s0
+
+
+on property:init.svc.surfaceflinger=running
+    start nubia_dc_bright_ser
+
+on property:init.svc.surfaceflinger=restarting
+    stop nubia_dc_bright_ser

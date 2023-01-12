@@ -1,0 +1,12 @@
+on boot
+#Nubia add for appmgmt
+    mkdir /dev/cpuset/appmgmt
+    copy /dev/cpuset/cpus /dev/cpuset/appmgmt/cpus
+    copy /dev/cpuset/mems /dev/cpuset/appmgmt/mems
+    write /dev/cpuset/appmgmt/cpus 0-6
+    chown system system /dev/cpuset/appmgmt
+    chown system system /dev/cpuset/appmgmt/tasks
+    chown system system /dev/cpuset/appmgmt/cgroup.procs
+    chmod 0644 /dev/cpuset/appmgmt/tasks
+    chmod 0644 /dev/cpuset/appmgmt/cgroup.procs
+#Nubia add end

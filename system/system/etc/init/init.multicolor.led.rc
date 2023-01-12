@@ -1,0 +1,3 @@
+on post-fs
+    restorecon /sys/class/leds/aw22xxx_led
+

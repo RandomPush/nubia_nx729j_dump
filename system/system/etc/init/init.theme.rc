@@ -1,0 +1,10 @@
+# Nubia add begin for theme
+# ThemeResource Path change from [/data/system/theme] to [/data/theme] Since Android N
+# due to Permission Issues of Android N
+on post-fs-data
+    mkdir /data/theme 0775 system system
+
+    # Nubia add begin for diyaod
+    mkdir /data/theme/diyaod 0777 system system
+    # Nubia add end
+# Nubia add end

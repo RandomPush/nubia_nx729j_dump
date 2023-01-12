@@ -1,0 +1,13 @@
+on post-fs
+    restorecon /sys/class/leds/fan
+    restorecon /sys/kernel/fan
+    restorecon /sys/kernel/fan/fan_enable
+    restorecon /sys/kernel/fan/fan_speed_level
+    restorecon /sys/kernel/fan/fan_speed_count
+
+on property:sys.fan.ready=*
+    restorecon /sys/class/leds/fan
+    restorecon /sys/kernel/fan
+    restorecon /sys/kernel/fan/fan_enable
+    restorecon /sys/kernel/fan/fan_speed_level
+    restorecon /sys/kernel/fan/fan_speed_count

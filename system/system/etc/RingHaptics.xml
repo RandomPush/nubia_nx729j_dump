@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<RingHaptics>
+	<!-- please keep Silence as the first -->
+	<Haptics name= "Silence">
+		<seq>0</seq>
+	</Haptics>
+	<Haptics name= "Hurry Up">
+		<seq>17 17 17 17 17 17 17 17</seq>
+	</Haptics>
+	<Haptics name= "Ramp Down">
+		<seq>47 48 49 50 51 50 50 51</seq>
+	</Haptics>
+	<Haptics name= "Heart Beat">
+		<seq>58 58 148 58 58 148</seq>
+	</Haptics>	
+</RingHaptics>

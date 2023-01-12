@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<multiwindow-setting>
+<!-- not need stop app -->
+<name-list name="game-black" type="black-list">
+    <item value="com.minitech.miniworld.TMobile"/>
+    <item value= "com.tencent.tmgp.pubgmhd"/>
+    <item value= "com.tencent.tmgp.sgame"/>
+    <item value= "com.ds.qmdfh"/>
+    <item value= "com.netease.tom"/>
+    <item value= "com.wepie.snake.new"/>
+    <item value= "com.popcap.pvz2cthdxm"/>
+    <item value= "com.tencent.tmgp.cf"/>
+    <item value= "com.p2y9y.ahms"/>
+    <item value= "com.haofei.ttaby"/>
+    <item value= "com.games.hc.acing"/>
+    <item value= "com.doudz"/>
+    <item value= "com.fnny.tttfk"/>
+    <item value= "com.uqee.lying.maingame.cbsg"/>
+    <item value= "com.kunpo.myhome"/>
+    <item value= "com.standddz003"/>
+    <item value= "com.yodo1.SkiSafari"/>
+    <item value= "com.happyelements.AndroidClover.mob"/>
+    <item value= "com.mgc.stickman.rope.hero.two"/>
+    <item value= "com.pvzHD.uuzw"/>
+    <item value= "com.jbby.hlsk"/>
+    <item value= "com.wb.yqlfs"/>
+    <item value= "com.ultralisk.gameapp.game70"/>
+    <item value= "com.tencent.ig"/>
+    <item value= "com.epicgames.fortnite"/>
+    <item value= "com.netease.xy3d"/>
+    <item value= "com.netease.xy3d.aligames"/>
+    <item value= "com.netease.aceracer.aligames"/>
+    <item value= "com.netease.aceracer.nubia"/>
+</name-list>
+
+<!-- all apps in the "update-focus" is black-list. -->
+<name-list name="app-black" type="black-list">
+    <item value="com.tmall.wireless" />
+</name-list>
+
+</multiwindow-setting>
+

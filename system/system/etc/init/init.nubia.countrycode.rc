@@ -1,0 +1,6 @@
+#nubia add for sync international version country code function
+#
+#
+on property:vendor.sys.device.country=*
+    setprop persist.sys.device.country ${vendor.sys.device.country}
+

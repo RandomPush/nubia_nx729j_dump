@@ -1,0 +1,6 @@
+on property:dev.bootcomplete=1
+    restorecon /sys/kernel/usb_enhance/cc_orientation
+    restorecon /sys/kernel/usb_enhance/otg30
+    restorecon /sys/kernel/usb_enhance/usb30
+    restorecon /sys/devices/platform/soc/soc:nubia_usb_switch_dp_gpio_ctrl/enable
+    restorecon /sys/devices/platform/soc/soc:nubia_usb_switch_dp_gpio_ctrl/cc_statue

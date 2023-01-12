@@ -1,0 +1,172 @@
+
+#Nubia add start, for woodpeckerd
+service woodpeckerd /system/bin/woodpeckerd
+    class main
+    user root
+    group root system sdcard_rw everybody sdcard_r media_rw vendor_qti_diag ext_data_rw log bluetooth
+    socket woodpeckerd stream 0666 root system u:r:woodpeckerd:s0
+    seclabel u:r:woodpeckerd:s0
+on property:sys.nblog.control=on
+    start woodpeckerd
+
+on property:sys.nubia.modemdump=on
+    copy /data/vendor/tombstones/SDX55M /data/anr
+
+on property:sys.nubia.fp.dump=on
+    copy /data/vendor/goodix /sdcard/nubialog
+
+on property:persist.sys.woodpeckerd.restart=*
+    restart woodpeckerd
+
+on property:persist.sys.fp.goodix.dump_data=on
+    setprop persist.vendor.goodix.dump_data 1
+
+# corefile limit
+on property:persist.debug.trace=1 && property:persist.sys.nblog.enable=on
+   mkdir /data/core 0777 root root
+   write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
+   setrlimit 4 -1 -1
+
+# property set on starting debug log
+on property:persist.sys.nblog.enable=on
+    mkdir  /sdcard/Documents/oom/
+    mkdir  /sdcard/nubialog/ 0776
+    mkdir  /data/misc/nubialog/ 0776 system media_rw encryption=None
+    mkdir  /data/vendor/nubialog/ 0776 root system encryption=None
+    mkdir  /data/vendor/nubialog/common/ 0776 root system encryption=None
+
+on property:persist.sys.nblog.enable=off
+    mkdir  /sdcard/nubialog/ 0776
+    mkdir ${sys.woodpeckerd.log_store_path}
+
+on property:persist.sys.nblog.enable=on && property:sys.shutdown.requested=*
+    start vendor.per_proxy
+
+# service to start diag_mdlog
+service nubia_diag_mdlog_start /vendor/bin/diag_mdlog -u -c -f ${sys.woodpeckerd.diag_mdlog_cfg} -m ${sys.woodpeckerd.diag_mdlog_cfg} -s 200 -n ${persist.sys.woodpeckerd.mdlog_counts} -o ${sys.woodpeckerd.diag_mdlog_path}
+	class late_start
+	user shell
+	group system oem_2901 sdcard_rw everybody sdcard_r media_rw ext_data_rw vendor_qti_diag
+	disabled
+	oneshot
+
+# service to stop diag_mdlog
+service nubia_diag_mdlog_stop /vendor/bin/diag_mdlog -k
+	class late_start
+	user shell
+	group system oem_2901 sdcard_rw everybody sdcard_r media_rw ext_data_rw vendor_qti_diag
+	disabled
+	oneshot
+
+# trigger start diag_mdlog service
+on property:sys.nubia.diag_mdlog_state=1
+    mkdir /data/vendor/nubialog/common/ 0776 root system encryption=None
+    mkdir ${sys.woodpeckerd.vendor_log_root_path} 0777 root system encryption=None
+    chmod 0554  ${sys.woodpeckerd.diag_mdlog_src_cfg}
+    copy ${sys.woodpeckerd.diag_mdlog_src_cfg} ${sys.woodpeckerd.diag_mdlog_cfg}
+    chmod 0777  ${sys.woodpeckerd.diag_mdlog_src_cfg}
+    chmod 0777  ${sys.woodpeckerd.diag_mdlog_cfg}
+    start nubia_diag_mdlog_start
+
+# trigger stop diag_mdlog service
+on property:sys.nubia.diag_mdlog_state=0
+    start nubia_diag_mdlog_stop
+    mkdir  /sdcard/nubialog/ 0776 system media_rw encryption=None
+    mkdir  /data/vendor/nubialog/ 0776 root system encryption=None
+
+
+# service to start diag_mdlog(over qdss)
+service nubia_diag_mdlog_over_qdss_start /vendor/bin/diag_mdlog -q 2 -u -c -f ${sys.woodpeckerd.diag_mdlog_cfg} -m ${sys.woodpeckerd.diag_mdlog_cfg} -s 200 -n ${persist.sys.woodpeckerd.mdlog_counts} -o ${sys.woodpeckerd.diag_mdlog_path}
+	class late_start
+	user shell
+	group system oem_2901 oem_2902 sdcard_rw everybody sdcard_r media_rw ext_data_rw vendor_qti_diag
+	disabled
+	oneshot
+
+# service to stop diag_mdlog(over qdss)
+service nubia_diag_mdlog_over_qdss_stop /vendor/bin/diag_mdlog -k
+	class late_start
+	user shell
+	group system oem_2901 oem_2902 sdcard_rw everybody sdcard_r media_rw ext_data_rw vendor_qti_diag
+	disabled
+	oneshot
+
+# trigger start diag_mdlog over qdss service
+on property:sys.nubia.diag_mdlog_over_qdss_state=1
+    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/wp_vendor_mdlog_opts.sh
+    mkdir /data/vendor/nubialog/common/ 0776 root system encryption=None
+    mkdir ${sys.woodpeckerd.vendor_log_root_path} 0777 root system encryption=None
+    chmod 0554  ${sys.woodpeckerd.diag_mdlog_src_cfg}
+    copy ${sys.woodpeckerd.diag_mdlog_src_cfg} ${sys.woodpeckerd.diag_mdlog_cfg}
+    chmod 0777  ${sys.woodpeckerd.diag_mdlog_src_cfg}
+    chmod 0777  ${sys.woodpeckerd.diag_mdlog_cfg}
+    restart nubia_diag_mdlog_over_qdss_start
+
+# trigger stop diag_mdlog over qdss service
+on property:sys.nubia.diag_mdlog_over_qdss_state=0
+    restart nubia_diag_mdlog_over_qdss_stop
+    mkdir  /sdcard/nubialog/ 0776 system media_rw encryption=None
+    mkdir  /data/vendor/nubialog/ 0776 root system encryption=None
+
+on property:sys.nubia.woodpeckerd.action.mv_vendor_common_logs=*
+    setprop sys.nubia.woodpeckerd.action.mv_vendor_common_logs.done 0
+    exec_background - shell root system -- /vendor/bin/wp_vendor_domain_mv.sh /data/vendor/nubialog/common/* /sdcard/nubialog/
+
+on property:sys.nubia.woodpeckerd.action.mv_minidump_logs=*
+    exec_background - shell root system -- /vendor/bin/wp_vendor_domain_mv.sh /data/vendor/nubialog/common/minidump/* ${sys.woodpeckerd.minidump.path}
+
+on property:vendor.woodpeckerd.mv.path=/data/vendor/nubialog/common/minidump/*
+    setprop sys.nubia.woodpeckerd.action.mv_minidump_logs_done 1
+
+on property:vendor.woodpeckerd.mv.path=/data/vendor/nubialog/common/*
+    setprop sys.nubia.woodpeckerd.action.mv_vendor_common_logs.done 1
+
+on property:vendor.woodpeckerd.mv.path=/data/vendor/nubialog/wlan_logs/
+    setprop sys.nubia.woodpeckerd.action.mv_vendor_wifi_logs.done 1
+
+on property:sys.nubia.woodpeckerd.minidump.status=0
+    setprop vendor.woodpeckerd.minidump.status 0
+
+on property:sys.nubia.wifi.log=enable
+    start vendor.cnss_diag
+
+on property:sys.nubia.wifi.log=disable
+    setprop sys.nubia.woodpeckerd.action.mv_vendor_wifi_logs.done 0
+    stop vendor.cnss_diag
+    mkdir ${sys.woodpeckerd.log_store_path}
+    exec_background - shell root system -- /vendor/bin/wp_vendor_domain_mv.sh /data/vendor/nubialog/wlan_logs/ ${sys.woodpeckerd.log_store_path}
+
+# trigger start sensor log
+on property:sys.nubia.woodpeckerd.sensorlog_state=1
+    setprop persist.debug.sensors.hal V
+    setprop persist.debug.sensors.daemon V
+    setprop persist.vendor.sensors.debug.hal V
+    setprop persist.vendor.sensors.debug.daemon V
+    setprop persist.vendor.debug.sensors.hal V
+    setprop persist.vendor.debug.sensors.daemon V
+
+
+# trigger stop sensor log
+on property:sys.nubia.woodpeckerd.sensorlog_state=0
+    setprop persist.debug.sensors.hal I
+    setprop persist.debug.sensors.daemon I
+    setprop persist.vendor.sensors.debug.hal I
+    setprop persist.vendor.sensors.debug.daemon I
+    setprop persist.vendor.debug.sensors.hal I
+    setprop persist.vendor.debug.sensors.daemon I
+
+# restorecon nubialog selabel under media
+on property:sys.nubia.woodpeckerd.restorecon_media_nubialog=1
+    restorecon --recursive /data/media/0/nubialog
+
+
+on post-fs-data
+# Create nubialog dir
+    mkdir  /data/misc/nubialog/ 0776 system media_rw encryption=None
+    mkdir  /data/vendor/nubialog/ 0776 root system encryption=None
+    mkdir  /data/vendor/nubialog/common/ 0776 root system encryption=None
+    mkdir  /data/vendor/nubialog/common/xbl 0776 root system encryption=None
+    mkdir  /data/vendor/nubialog/common/minidump 0776 root system encryption=None
+    start nubia.user_de.post
+
+#Nubia add end

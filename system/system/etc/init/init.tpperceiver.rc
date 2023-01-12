@@ -1,0 +1,10 @@
+#Nubia add start, for tpperceiver
+service tpperceiver /system/bin/tpperceiver
+    class main
+    user root
+    group system
+
+
+on late-fs
+    start tpperceiver
+#Nubia add end

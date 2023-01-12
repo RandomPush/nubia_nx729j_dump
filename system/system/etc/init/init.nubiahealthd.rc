@@ -1,0 +1,11 @@
+service nubiahealthd /system/bin/dumpstate nubiahealthd
+    class main
+    user root
+    group system
+    socket nubiahealthd stream 0666 root system
+
+on post-fs-data
+    mkdir /data/nubiahealth 0775 root system encryption=None
+    mkdir /data/nubiahealth/trace 0777 root system encryption=None
+    mkdir /data/nubiahealth/lib 0775 root system encryption=None
+    mkdir /data/nubiahealth/lib64 0775 root system encryption=None

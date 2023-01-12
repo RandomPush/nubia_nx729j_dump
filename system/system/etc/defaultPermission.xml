@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above
+ *       copyright notice, this list of conditions and the following
+ *       disclaimer in the documentation and/or other materials provided
+ *       with the distribution.
+ *     * Neither the name of The Linux Foundation nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ * BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+ * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+-->
+<!--
+/*
+ * WRITE_SMS for AppOps setMoed allow
+ * normal permission for not grant default permission
+ * Non-android permissions do not affect GTS
+ */
+-->
+
+<DefaultPermission>
+    <package name="cn.nubia.databackup">
+        <permission name="android.permission.WRITE_SMS" fix="true" />
+    </package>
+    <package name="cn.nubia.harassintercept">
+        <permission name="android.permission.WRITE_SMS" fix="true" />
+    </package>
+    <package name="cn.nubia.cloud">
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fix="true" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fix="true" />
+        <permission name="android.permission.READ_PHONE_STATE" fix="true" />
+        <permission name="android.permission.CALL_PHONE" fix="true" />
+        <permission name="android.permission.GET_ACCOUNTS" fix="true" />
+        <permission name="android.permission.WRITE_CONTACTS" fix="true" />
+        <permission name="android.permission.READ_CONTACTS" fix="true" />
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fix="true" />
+        <permission name="android.permission.ACCESS_MEDIA_LOCATION" fix="true" />
+    </package>
+    <package name="cn.nubia.weather">
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fix="false" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fix="false" />
+        <permission name="android.permission.READ_PHONE_STATE" fix="false" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.ACCESS_MEDIA_LOCATION" fix="false" />
+    </package>
+    <package name="com.tencent.android.location">
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fix="true" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="true" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fix="true" />
+        <permission name="android.permission.READ_PHONE_STATE" fix="true" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="true" />
+    </package>
+    <package name="cn.nubia.smartrecognition">
+        <permission name="android.permission.READ_CONTACTS" fix="true" />
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fix="true" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fix="true" />
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fix="true" />
+    </package>
+    <package name="cn.nubia.deskclock.preset">
+        <permission name="org.codeaurora.permission.POWER_OFF_ALARM" fix="true" />
+    </package>
+    <package name="cn.nubia.accounts">
+        <permission name="android.permission.READ_CONTACTS" fix="true" />
+        <permission name="android.permission.WRITE_CONTACTS" fix="true" />
+        <permission name="android.permission.GET_ACCOUNTS" fix="true" />
+        <permission name="android.permission.READ_SMS" fix="true" />
+        <permission name="android.permission.RECEIVE_SMS" fix="true" />
+        <permission name="android.permission.SEND_SMS" fix="true" />
+        <permission name="android.permission.READ_PHONE_STATE" fix="true" />
+        <permission name="android.permission.CALL_PHONE" fix="true" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="true" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="true" />
+        <permission name="android.permission.WRITE_CALENDAR" fix="true" />
+        <permission name="android.permission.READ_CALENDAR" fix="true" />
+        <permission name="android.permission.ACCESS_MEDIA_LOCATION" fix="true" />
+    </package>
+    <package name="cn.nubia.usercenter">
+        <permission name="android.permission.READ_PHONE_STATE" fix="false" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="false" />
+    </package>
+    <package name="cn.nubia.contacts">
+        <permission name="android.permission.READ_CALENDAR" fix="false" />
+        <permission name="android.permission.WRITE_CALENDAR" fix="false" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.READ_PHONE_STATE" fix="true" />
+        <permission name="android.permission.WRITE_CONTACTS" fix="true" />
+        <permission name="android.permission.GET_ACCOUNTS" fix="true" />
+        <permission name="android.permission.READ_CONTACTS" fix="true" />
+    </package>
+    <package name="com.android.providers.contacts">
+        <permission name="android.permission.READ_PHONE_STATE" fix="true" />
+        <permission name="android.permission.WRITE_CONTACTS" fix="true" />
+        <permission name="android.permission.GET_ACCOUNTS" fix="true" />
+        <permission name="android.permission.READ_CONTACTS" fix="true" />
+    </package>
+    <package name="com.microfountain.rcs.service">
+        <permission name="android.permission.READ_PHONE_STATE" fix="true" />
+        <permission name="android.permission.RECEIVE_SMS" fix="true" />
+        <permission name="android.permission.SEND_SMS" fix="true" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="true" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="true" />
+    </package>
+    <package name="com.google.android.gms">
+        <permission name="android.permission.READ_CONTACTS" fix="false" />
+        <permission name="android.permission.WRITE_CONTACTS" fix="false" />
+        <permission name="android.permission.GET_ACCOUNTS" fix="false" />
+        <permission name="android.permission.READ_CALENDAR" fix="false" />
+        <permission name="android.permission.WRITE_CALENDAR" fix="false" />
+        <permission name="android.permission.RECORD_AUDIO" fix="false" />
+        <permission name="android.permission.READ_PHONE_STATE" fix="false" />
+        <permission name="android.permission.CALL_PHONE" fix="false" />
+        <permission name="android.permission.READ_CALL_LOG" fix="false" />
+        <permission name="android.permission.WRITE_CALL_LOG" fix="false" />
+        <permission name="com.android.voicemail.permission.ADD_VOICEMAIL" fix="false" />
+        <permission name="android.permission.USE_SIP" fix="false" />
+        <permission name="android.permission.PROCESS_OUTGOING_CALLS" fix="false" />
+        <permission name="android.permission.SEND_SMS" fix="false" />
+        <permission name="android.permission.RECEIVE_SMS" fix="false" />
+        <permission name="android.permission.READ_SMS" fix="false" />
+        <permission name="android.permission.RECEIVE_WAP_PUSH" fix="false" />
+        <permission name="android.permission.RECEIVE_MMS" fix="false" />
+        <permission name="android.permission.READ_CELL_BROADCASTS" fix="false" />
+        <permission name="android.permission.CAMERA" fix="false" />
+        <permission name="android.permission.BODY_SENSORS" fix="false" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="false" />
+        <permission name="android.permission.ACCESS_MEDIA_LOCATION" fix="false" />
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fix="true" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fix="true" />
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fix="true" />
+        <permission name="android.permission.ACTIVITY_RECOGNITION" fix="true" />
+        <permission name="android.permission.BLUETOOTH_ADVERTISE" fix="false" />
+        <permission name="android.permission.BLUETOOTH_CONNECT" fix="false" />
+        <permission name="android.permission.BLUETOOTH_SCAN" fix="false" />
+    </package>
+
+    <package name="com.tencent.mia.tms">
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="true" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="true" />
+    </package>
+
+    <package name="com.tencent.mia.trs">
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fix="true" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fix="true" />
+    </package>
+
+    <package name="cn.nubia.gameassist">
+        <permission name="org.codeaurora.permission.POWER_OFF_ALARM" fix="true" />
+    </package>
+</DefaultPermission>
