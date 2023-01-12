@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<mfnr_network_denoise_config>
+    <PhoneConfigParam cache_path="/data/vendor/camera/" phone_id="NX701J"
+        k1_net="0.0004897055f" k2_net="0.01507620f" s1_net="7.910723e-7f" s2_net="0.002898401f"
+        s3_net="-1.223214f" black_level_net="64" white_level_net="1023" iso_a="2000"
+        model_width="608" model_height="608" tflite_model="tflite_model_denoised592_608_608">
+        <CameraConfigParam camera_id="0" factor_rough="8" k1_camera="0.0005253428653790485f"
+            k2_camera="-0.026227836477984545f" s1_camera="1.6619345929586343e-07f"
+            s2_camera="0.002035914732615948f" s3_camera="0.16701325701267375f"
+            black_level_camera="64" white_level_camera="1023" max_analog_iso="6400" num_w="4"
+            num_h="3" threshold_dpc_luma_percent="0.005f"></CameraConfigParam>
+        <CameraConfigParam camera_id="1" factor_rough="8" k1_camera="0.00045328268649127875f"
+            k2_camera="0.14050291579550178f" s1_camera="1.1733217000599858e-06f"
+            s2_camera="0.00025451453095076893f" s3_camera="0.6156903424949373f"
+            black_level_camera="64" white_level_camera="1023" max_analog_iso="6400" num_w="2"
+            num_h="2" threshold_dpc_luma_percent="0.005f"></CameraConfigParam>
+        <CameraConfigParam camera_id="2" factor_rough="8" k1_camera="0.000344582538833261f"
+            k2_camera="-0.002512051611686994f" s1_camera="6.265864400006277e-08f"
+            s2_camera="0.0007603827570394297f" s3_camera="0.4652065062100525f"
+            black_level_camera="64" white_level_camera="1023" max_analog_iso="3200" num_w="4"
+            num_h="3" threshold_dpc_luma_percent="0.005f"></CameraConfigParam>
+        <CameraConfigParam camera_id="3" factor_rough="8" k1_camera="0.001554786508265423f"
+            k2_camera="0.002292891573267175f" s1_camera="5.067985361345536e-06f"
+            s2_camera="0.0009013300472579948f" s3_camera="-0.022774636335532353f"
+            black_level_camera="64" white_level_camera="1023" max_analog_iso="1600" num_w="4"
+            num_h="3" threshold_dpc_luma_percent="0.005f"></CameraConfigParam>
+    </PhoneConfigParam>
+</mfnr_network_denoise_config>

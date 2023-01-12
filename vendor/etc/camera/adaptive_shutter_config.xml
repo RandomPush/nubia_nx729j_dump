@@ -1,0 +1,195 @@
+<?xml version="1.0" standalone="no"?>
+<adaptive_shutter_config>
+    <sensor>
+        <camera_id value=0 />
+        <min_sensor_gain value=1.29f />
+        <max_sensor_gain value=64.0f />
+        <max_isp_gain value=2.024f />
+        <max_preview_exposure_time value=71.5 />
+        <max_micro_exposure_time value=10 />
+        <threshold_focus_distance value=30.0 />
+        <threshold_bright_dark value=420.0 />
+        <threshold_control_preview value=420.0 />
+        <threshold_very_dark value=500.0 />
+        <luma_target_very_dark value=20.0 />
+        <gain_threshold_to_use_denoise_algorithm value=10.0 />
+        <threshold_motion_blur_pixel_less_10ms value=20 />
+        <threshold_motion_blur_pixel_11ms_to_30ms value=40 />
+        <threshold_motion_blur_pixel_31ms_to_50ms value=62 />
+        <threshold_motion_blur_pixel_51ms_to_70ms value=70 />
+        <threshold_motion_blur_pixel_71ms_to_90ms value=80 />
+        <threshold_hdr_from_adrc_gain value=1.5f />
+        <hdr_low_exposure_reduce_ratio value=16.0f />
+        <motion_speed_threshold_zoom value=1.6f />
+        <threshold_gyroscope_motion_blur_pixel value=30 />
+        <very_dark_capture_num value=8 />
+        <GainRangeToCaptureNum>
+            <level1_gain_to_capture_num min_gain=0.0, max_gain=4.1, capture_num=1 />
+            <level2_gain_to_capture_num min_gain=4.1, max_gain=16.1, capture_num=4 />
+            <level3_gain_to_capture_num min_gain=16.1, max_gain=1000000.0, capture_num=6 />
+        </GainRangeToCaptureNum>
+        <GyroMaxExposureTime>
+            <tripod_stability gyro_angular_speed=0.009, max_exposure_time=1000 />
+            <level1_stability gyro_angular_speed=0.015, max_exposure_time=250 />
+            <level2_stability gyro_angular_speed=0.025, max_exposure_time=180 />
+            <level3_stability gyro_angular_speed=0.05, max_exposure_time=90 />
+        </GyroMaxExposureTime>
+        <ExposureTimeRange>
+            <et_below_10ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_10ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_20ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_30ms_range min_short_exposure_gain=0.22222, max_long_exposure_gain=1.0 />
+            <et_40ms_range min_short_exposure_gain=0.16667, max_long_exposure_gain=1.0 />
+            <et_50ms_range min_short_exposure_gain=0.13333, max_long_exposure_gain=1.6 />
+            <et_60ms_range min_short_exposure_gain=0.66666, max_long_exposure_gain=1.5 />
+            <et_70ms_range min_short_exposure_gain=0.71428, max_long_exposure_gain=2.0 />
+            <et_80ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_90ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_dark_night_range min_short_exposure_gain=2.0, max_long_exposure_gain=5.5 />
+        </ExposureTimeRange>
+    </sensor>
+    <sensor>
+        <camera_id value=1 />
+        <min_sensor_gain value=1.0f />
+        <max_sensor_gain value=62.0f />
+        <max_isp_gain value=1.04f />
+        <max_preview_exposure_time value=100 />
+        <max_micro_exposure_time value=10 />
+        <threshold_focus_distance value=-1.0 />
+        <threshold_bright_dark value=380.0 />
+        <threshold_control_preview value=380.0 />
+        <threshold_very_dark value=415.0 />
+        <luma_target_very_dark value=27.0 />
+        <gain_threshold_to_use_denoise_algorithm value=16.0 />
+        <threshold_motion_blur_pixel_less_10ms value=20 />
+        <threshold_motion_blur_pixel_11ms_to_30ms value=40 />
+        <threshold_motion_blur_pixel_31ms_to_50ms value=60 />
+        <threshold_motion_blur_pixel_51ms_to_70ms value=70 />
+        <threshold_motion_blur_pixel_71ms_to_90ms value=80 />
+        <threshold_hdr_from_adrc_gain value=1.5f />
+        <hdr_low_exposure_reduce_ratio value=16.0f />
+        <motion_speed_threshold_zoom value=1.6f />
+        <threshold_gyroscope_motion_blur_pixel value=30 />
+        <very_dark_capture_num value=8 />
+        <GainRangeToCaptureNum>
+            <level1_gain_to_capture_num min_gain=0.0, max_gain=4.1, capture_num=1 />
+            <level2_gain_to_capture_num min_gain=4.1, max_gain=16.1, capture_num=4 />
+            <level3_gain_to_capture_num min_gain=16.1, max_gain=1000000.0, capture_num=8 />
+        </GainRangeToCaptureNum>
+        <GyroMaxExposureTime>
+            <tripod_stability gyro_angular_speed=0.009, max_exposure_time=1000 />
+            <level1_stability gyro_angular_speed=0.015, max_exposure_time=250 />
+            <level2_stability gyro_angular_speed=0.025, max_exposure_time=180 />
+            <level3_stability gyro_angular_speed=0.05, max_exposure_time=90 />
+        </GyroMaxExposureTime>
+        <ExposureTimeRange>
+            <et_below_10ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_10ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_20ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_30ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_40ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_50ms_range min_short_exposure_gain=0.4, max_long_exposure_gain=1.6 />
+            <et_60ms_range min_short_exposure_gain=0.66666, max_long_exposure_gain=1.5 />
+            <et_70ms_range min_short_exposure_gain=0.71428, max_long_exposure_gain=2.0 />
+            <et_80ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_90ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_dark_night_range min_short_exposure_gain=2.0, max_long_exposure_gain=5.5 />
+        </ExposureTimeRange>
+    </sensor>
+    <sensor>
+        <camera_id value=2 />
+        <min_sensor_gain value=1.0f />
+        <max_sensor_gain value=16.0f />
+        <max_isp_gain value=4.0f />
+        <max_preview_exposure_time value=90 />
+        <max_micro_exposure_time value=10 />
+        <threshold_focus_distance value=30.0 />
+        <threshold_bright_dark value=320.0 />
+        <threshold_control_preview value=420.0 />
+        <threshold_very_dark value=500.0 />
+        <luma_target_very_dark value=20.0 />
+        <gain_threshold_to_use_denoise_algorithm value=10.0 />
+        <threshold_motion_blur_pixel_less_10ms value=20 />
+        <threshold_motion_blur_pixel_11ms_to_30ms value=40 />
+        <threshold_motion_blur_pixel_31ms_to_50ms value=60 />
+        <threshold_motion_blur_pixel_51ms_to_70ms value=70 />
+        <threshold_motion_blur_pixel_71ms_to_90ms value=80 />
+        <threshold_hdr_from_adrc_gain value=1.5f />
+        <hdr_low_exposure_reduce_ratio value=16.0f />
+        <motion_speed_threshold_zoom value=1.6f />
+        <threshold_gyroscope_motion_blur_pixel value=30 />
+        <very_dark_capture_num value=8 />
+        <GainRangeToCaptureNum>
+            <level1_gain_to_capture_num min_gain=0.0, max_gain=4.1, capture_num=1 />
+            <level2_gain_to_capture_num min_gain=4.1, max_gain=16.1, capture_num=4 />
+            <level3_gain_to_capture_num min_gain=16.1, max_gain=1000000.0, capture_num=6 />
+        </GainRangeToCaptureNum>
+        <GyroMaxExposureTime>
+            <tripod_stability gyro_angular_speed=0.009, max_exposure_time=1000 />
+            <level1_stability gyro_angular_speed=0.015, max_exposure_time=250 />
+            <level2_stability gyro_angular_speed=0.025, max_exposure_time=180 />
+            <level3_stability gyro_angular_speed=0.05, max_exposure_time=90 />
+        </GyroMaxExposureTime>
+        <ExposureTimeRange>
+            <et_below_10ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_10ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_20ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_30ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_40ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_50ms_range min_short_exposure_gain=0.4, max_long_exposure_gain=1.6 />
+            <et_60ms_range min_short_exposure_gain=0.67, max_long_exposure_gain=1.5 />
+            <et_70ms_range min_short_exposure_gain=0.71, max_long_exposure_gain=2.0 />
+            <et_80ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_90ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_dark_night_range min_short_exposure_gain=2.0, max_long_exposure_gain=5.5 />
+        </ExposureTimeRange>
+    </sensor>
+    <sensor>
+        <camera_id value=3 />
+        <min_sensor_gain value=1.0f />
+        <max_sensor_gain value=16.0f />
+        <max_isp_gain value=4.0f />
+        <max_preview_exposure_time value=90 />
+        <max_micro_exposure_time value=10 />
+        <threshold_focus_distance value=-1.0 />
+        <threshold_bright_dark value=320.0 />
+        <threshold_control_preview value=420.0 />
+        <threshold_very_dark value=500.0 />
+        <luma_target_very_dark value=20.0 />
+        <gain_threshold_to_use_denoise_algorithm value=10.0 />
+        <threshold_motion_blur_pixel_less_10ms value=20 />
+        <threshold_motion_blur_pixel_11ms_to_30ms value=40 />
+        <threshold_motion_blur_pixel_31ms_to_50ms value=60 />
+        <threshold_motion_blur_pixel_51ms_to_70ms value=70 />
+        <threshold_motion_blur_pixel_71ms_to_90ms value=80 />
+        <threshold_hdr_from_adrc_gain value=1.5f />
+        <hdr_low_exposure_reduce_ratio value=16.0f />
+        <motion_speed_threshold_zoom value=1.6f />
+        <threshold_gyroscope_motion_blur_pixel value=30 />
+        <very_dark_capture_num value=8 />
+        <GainRangeToCaptureNum>
+            <level1_gain_to_capture_num min_gain=0.0, max_gain=4.1, capture_num=1 />
+            <level2_gain_to_capture_num min_gain=4.1, max_gain=16.1, capture_num=4 />
+            <level3_gain_to_capture_num min_gain=16.1, max_gain=1000000.0, capture_num=6 />
+        </GainRangeToCaptureNum>
+        <GyroMaxExposureTime>
+            <tripod_stability gyro_angular_speed=0.009, max_exposure_time=1000 />
+            <level1_stability gyro_angular_speed=0.015, max_exposure_time=250 />
+            <level2_stability gyro_angular_speed=0.025, max_exposure_time=180 />
+            <level3_stability gyro_angular_speed=0.05, max_exposure_time=90 />
+        </GyroMaxExposureTime>
+        <ExposureTimeRange>
+            <et_below_10ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_10ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_20ms_range min_short_exposure_gain=0.2, max_long_exposure_gain=1.0 />
+            <et_30ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_40ms_range min_short_exposure_gain=0.25, max_long_exposure_gain=1.0 />
+            <et_50ms_range min_short_exposure_gain=0.4, max_long_exposure_gain=1.6 />
+            <et_60ms_range min_short_exposure_gain=0.67, max_long_exposure_gain=1.5 />
+            <et_70ms_range min_short_exposure_gain=0.71, max_long_exposure_gain=2.0 />
+            <et_80ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_90ms_range min_short_exposure_gain=1.0, max_long_exposure_gain=2.0 />
+            <et_dark_night_range min_short_exposure_gain=2.0, max_long_exposure_gain=5.5 />
+        </ExposureTimeRange>
+    </sensor>
+</adaptive_shutter_config>

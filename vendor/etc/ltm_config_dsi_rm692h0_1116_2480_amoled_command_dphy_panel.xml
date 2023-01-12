@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ * Copyright (c) 2021 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+--><Group id="LTMConfig">
+    <!-- version should be maintained -->
+    <version>"1.0"</version>
+
+    <default>
+        <feature_visibility>
+            <TemporalFilterSpeedStepSizeOne>8</TemporalFilterSpeedStepSizeOne>
+            <TemporalControlTableInput>0 30 50 128 160 256</TemporalControlTableInput>
+            <TemporalControlTableOutput>1 2 4 4 4 4</TemporalControlTableOutput>
+
+            <BacklightReductionTableInput>0 2048 3072 3584 4095</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>0 2048 3072 3584 4095</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+
+            <AmbientLightToContrastStrengthTableInput>10000 25000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>128 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+
+            <BacklightToContrastStrengthTableInput>0 1024 2048 3072 4095</BacklightToContrastStrengthTableInput>
+            <BacklightToContrastStrengthTableOutput>256 256 256 256 256</BacklightToContrastStrengthTableOutput>
+            <BacklightToContrastStrengthEnable>1</BacklightToContrastStrengthEnable>
+
+            <LuxStartPoint>1000</LuxStartPoint>
+
+            <param001>256</param001>
+            <param002>128</param002>
+            <param003>5</param003>
+            <param004>60</param004>
+            <param005>1.2</param005>
+            <param006>50</param006>
+            <param007>8</param007>
+        </feature_visibility>
+        <feature_dre>
+            <TemporalFilterSpeedStepSizeOne>8</TemporalFilterSpeedStepSizeOne>
+            <TemporalFilterSpeedTableInput>0 30 50 128 160 256</TemporalFilterSpeedTableInput>
+            <TemporalFilterSpeedTableOutput>1 2 4 4 4 4</TemporalFilterSpeedTableOutput>
+
+            <AlsToBoostStrengthTableInput>10 500 900</AlsToBoostStrengthTableInput>
+            <AlsToBoostStrengthTableOutput>128 64 32</AlsToBoostStrengthTableOutput>
+
+            <SatGain>1.0</SatGain>
+
+            <LuxEndPoint>999</LuxEndPoint>
+
+            <param001>256</param001>
+            <param002>128</param002>
+            <param003>5</param003>
+            <param004>60</param004>
+            <param005>1.2</param005>
+            <param006>50</param006>
+        </feature_dre>
+    </default>
+
+</Group>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NUBIAUI-Font>
+    <!--字体英文名称，不同的字体包不可重名-->
+    <title>Default Font</title>
+
+    <!--字体中文名称-->
+    <title_cn>nubia默认字体</title_cn>
+
+    <!--作者名称，由设计师自由填写，允许重名-->
+    <author>nubia团队</author>
+
+    <!--字体包版本号名称，按标准格式“1.0.0”填写(标准格式为三位10以内数字，用“.”符号隔开)-->
+    <versionName>1.0.0</versionName>
+
+    <!--字体包简介-->
+    <description>nubia系统官方默认字体。</description>
+
+    <!--字体包更新说明，若为升级版本，则需要填写更新说明,若无，则默认填写null-->
+    <updateInfo>null</updateInfo>
+
+    <!--字体分类，填写以下中的一个：手写体、印刷体、简约体、酷炫体、艺术体、可爱体-->
+    <category>印刷体</category>
+
+    <!--字体标签，不同的标签以中文逗号隔开-->
+    <tag>官方</tag>
+
+    <!--字体建议价格，0表示免费-->
+    <price>0</price>
+
+    <!--【重要】以下信息由运营人员提供，请不要随意更改-->
+    <!--【重要】字体包代数,与Nubia UI匹配，请不要随意更改-->
+    <fontGeneration>1</fontGeneration>
+
+    <!--字体公司来源名称，可填写中文或英文名称（若为公司，则填写公司名称，若为个人，则填写“个人”）-->
+    <source>努比亚技术有限公司</source>
+
+    <!--作者ID，填写作者（公司）的nubia账号登录名（可到Nubia官网进行申请）-->
+    <author_id>wang.qian6@zte.com.cn</author_id>
+</NUBIAUI-Font>

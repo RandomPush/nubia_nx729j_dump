@@ -1,0 +1,12 @@
+service nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service.sec
+    class hal
+    user nfc
+    group nfc
+    oneshot
+   disabled
+
+on property:ro.vendor.nfc.chiptype=nfc && property:ro.boot.product.hardware.sku=nfc
+    start nfc_hal_service	
+
+on property:ro.vendor.nfc.chiptype=nfc+ese && property:ro.boot.product.hardware.sku=nfc
+    start nfc_hal_service

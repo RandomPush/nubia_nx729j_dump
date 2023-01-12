@@ -1,0 +1,9 @@
+service stc_oem  /vendor/bin/stc_oem_test ${sys.nubia.stcoem}    
+    class main
+    user root
+    group root root
+    oneshot
+    seclabel u:r:stc_oem:s0
+
+on property:sys.nubia.stcoem=*
+       start stc_oem

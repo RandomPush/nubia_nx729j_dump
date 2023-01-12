@@ -1,0 +1,272 @@
+# Copyright (c) 2011-2013, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+on post-fs-data
+   # Nubia add start
+	chown system system /sys/class/leds/vibrator_aw8695/state
+	chown system system /sys/class/leds/vibrator_aw8695/duration
+	chown system system /sys/class/leds/vibrator_aw8695/activate
+	chown system system /sys/class/leds/vibrator_aw8695/activate_mode
+	chown system system /sys/class/leds/vibrator_aw8695/brightness
+	chown system system /sys/class/leds/vibrator_aw8695/cali
+	chown system system /sys/class/leds/vibrator_aw8695/cont
+	chown system system /sys/class/leds/vibrator_aw8695/cont_drv
+	chown system system /sys/class/leds/vibrator_aw8695/cont_num_brk
+	chown system system /sys/class/leds/vibrator_aw8695/cont_td
+	chown system system /sys/class/leds/vibrator_aw8695/cont_zc_thr
+	chown system system /sys/class/leds/vibrator_aw8695/f0
+	chown system system /sys/class/leds/vibrator_aw8695/gain
+	chown system system /sys/class/leds/vibrator_aw8695/haptic_audio
+	chown system system /sys/class/leds/vibrator_aw8695/haptic_audio_time
+	chown system system /sys/class/leds/vibrator_aw8695/index
+	chown system system /sys/class/leds/vibrator_aw8695/loop
+	chown system system /sys/class/leds/vibrator_aw8695/rtp
+	chown system system /sys/class/leds/vibrator_aw8695/seq
+	chown system system /sys/class/leds/vibrator_aw8695/vmax
+	chown system system /sys/class/leds/vibrator_aw8695/touch
+	chown system system /sys/class/leds/vibrator_aw8695/touch_enable
+
+	chown system system /sys/class/leds/vibrator/state
+	chown system system /sys/class/leds/vibrator/duration
+	chown system system /sys/class/leds/vibrator/activate
+	chown system system /sys/class/leds/vibrator/activate_mode
+	chown system system /sys/class/leds/vibrator/brightness
+	chown system system /sys/class/leds/vibrator/cali
+	chown system system /sys/class/leds/vibrator/cont
+	chown system system /sys/class/leds/vibrator/cont_drv
+	chown system system /sys/class/leds/vibrator/cont_num_brk
+	chown system system /sys/class/leds/vibrator/cont_td
+	chown system system /sys/class/leds/vibrator/cont_zc_thr
+	chown system system /sys/class/leds/vibrator/f0
+	chown system system /sys/class/leds/vibrator/gain
+	chown system system /sys/class/leds/vibrator/haptic_audio
+	chown system system /sys/class/leds/vibrator/haptic_audio_time
+	chown system system /sys/class/leds/vibrator/index
+	chown system system /sys/class/leds/vibrator/loop
+	chown system system /sys/class/leds/vibrator/rtp
+	chown system system /sys/class/leds/vibrator/seq
+	chown system system /sys/class/leds/vibrator/vmax
+	chown system system /sys/class/leds/vibrator/touch
+	chown system system /sys/class/leds/vibrator/touch_enable
+	chown system system /sys/class/leds/vibrator/awrw
+
+
+
+	chown system system /sys/class/leds/vibrator_l/state
+	chown system system /sys/class/leds/vibrator_l/duration
+	chown system system /sys/class/leds/vibrator_l/activate
+	chown system system /sys/class/leds/vibrator_l/activate_mode
+	chown system system /sys/class/leds/vibrator_l/brightness
+	chown system system /sys/class/leds/vibrator_l/cali
+	chown system system /sys/class/leds/vibrator_l/dual_rtp
+	chown system system /sys/class/leds/vibrator_l/dual_mode
+	chown system system /sys/class/leds/vibrator_l/dual_activate
+	chown system system /sys/class/leds/vibrator_l/dual_duration
+	chown system system /sys/class/leds/vibrator_l/dual_index
+	chown system system /sys/class/leds/vibrator_l/cont
+	chown system system /sys/class/leds/vibrator_l/cont_drv
+	chown system system /sys/class/leds/vibrator_l/cont_num_brk
+	chown system system /sys/class/leds/vibrator_l/cont_td
+	chown system system /sys/class/leds/vibrator_l/cont_zc_thr
+	chown system system /sys/class/leds/vibrator_l/f0
+	chown system system /sys/class/leds/vibrator_l/gain
+	chown system system /sys/class/leds/vibrator_l/haptic_audio
+	chown system system /sys/class/leds/vibrator_l/awrw
+	chown system system /sys/class/leds/vibrator_l/haptic_audio_time
+	chown system system /sys/class/leds/vibrator_l/index
+	chown system system /sys/class/leds/vibrator_l/loop
+	chown system system /sys/class/leds/vibrator_l/rtp
+	chown system system /sys/class/leds/vibrator_l/seq
+	chown system system /sys/class/leds/vibrator_l/vmax
+	chown system system /sys/class/leds/vibrator_l/touch
+	chown system system /sys/class/leds/vibrator_l/touch_enable
+
+
+	chown system system /sys/class/leds/vibrator_r/state
+	chown system system /sys/class/leds/vibrator_r/duration
+	chown system system /sys/class/leds/vibrator_r/activate
+	chown system system /sys/class/leds/vibrator_r/activate_mode
+	chown system system /sys/class/leds/vibrator_r/brightness
+	chown system system /sys/class/leds/vibrator_r/cali
+	chown system system /sys/class/leds/vibrator_r/cont
+	chown system system /sys/class/leds/vibrator_r/dual_rtp
+	chown system system /sys/class/leds/vibrator_r/dual_mode
+	chown system system /sys/class/leds/vibrator_r/dual_activate
+	chown system system /sys/class/leds/vibrator_r/dual_duration
+	chown system system /sys/class/leds/vibrator_r/dual_index
+	chown system system /sys/class/leds/vibrator_r/cont_drv
+	chown system system /sys/class/leds/vibrator_r/cont_num_brk
+	chown system system /sys/class/leds/vibrator_r/cont_td
+	chown system system /sys/class/leds/vibrator_r/cont_zc_thr
+	chown system system /sys/class/leds/vibrator_r/f0
+	chown system system /sys/class/leds/vibrator_r/gain
+	chown system system /sys/class/leds/vibrator_r/haptic_audio
+	chown system system /sys/class/leds/vibrator_r/awrw
+	chown system system /sys/class/leds/vibrator_r/haptic_audio_time
+	chown system system /sys/class/leds/vibrator_r/index
+	chown system system /sys/class/leds/vibrator_r/loop
+	chown system system /sys/class/leds/vibrator_r/rtp
+	chown system system /sys/class/leds/vibrator_r/seq
+	chown system system /sys/class/leds/vibrator_r/vmax
+	chown system system /sys/class/leds/vibrator_r/touch
+	chown system system /sys/class/leds/vibrator_r/touch_enable
+	
+	chown system system /sys/class/leds/vibrator_y/state
+	chown system system /sys/class/leds/vibrator_y/duration
+	chown system system /sys/class/leds/vibrator_y/activate
+	chown system system /sys/class/leds/vibrator_y/activate_mode
+	chown system system /sys/class/leds/vibrator_y/brightness
+	chown system system /sys/class/leds/vibrator_y/cali
+	chown system system /sys/class/leds/vibrator_y/cont
+	chown system system /sys/class/leds/vibrator_y/dual_rtp
+	chown system system /sys/class/leds/vibrator_y/dual_mode
+	chown system system /sys/class/leds/vibrator_y/dual_activate
+	chown system system /sys/class/leds/vibrator_y/dual_duration
+	chown system system /sys/class/leds/vibrator_y/dual_index
+	chown system system /sys/class/leds/vibrator_y/cont_drv
+	chown system system /sys/class/leds/vibrator_y/cont_num_brk
+	chown system system /sys/class/leds/vibrator_y/cont_td
+	chown system system /sys/class/leds/vibrator_y/cont_zc_thr
+	chown system system /sys/class/leds/vibrator_y/f0
+	chown system system /sys/class/leds/vibrator_y/gain
+	chown system system /sys/class/leds/vibrator_y/haptic_audio
+	chown system system /sys/class/leds/vibrator_y/awrw
+	chown system system /sys/class/leds/vibrator_y/haptic_audio_time
+	chown system system /sys/class/leds/vibrator_y/index
+	chown system system /sys/class/leds/vibrator_y/loop
+	chown system system /sys/class/leds/vibrator_y/rtp
+	chown system system /sys/class/leds/vibrator_y/seq
+	chown system system /sys/class/leds/vibrator_y/vmax
+	chown system system /sys/class/leds/vibrator_y/touch
+	chown system system /sys/class/leds/vibrator_y/touch_enable
+
+
+	chmod 666 /sys/class/leds/vibrator_aw8695/state
+	chmod 666 /sys/class/leds/vibrator_aw8695/rtp
+	chmod 666 /sys/class/leds/vibrator_aw8695/activate
+	chmod 666 /sys/class/leds/vibrator_aw8695/activate_mode
+	chmod 666 /sys/class/leds/vibrator_aw8695/duration
+	chmod 666 /sys/class/leds/vibrator_aw8695/index
+	chmod 666 /sys/class/leds/vibrator_aw8695/seq
+	chmod 666 /sys/class/leds/vibrator_aw8695/vmax
+	chmod 666 /sys/class/leds/vibrator_aw8695/touch
+	chmod 666 /sys/class/leds/vibrator_aw8695/touch_enable
+	chmod 666 /sys/class/leds/vibrator_aw8695/brightness
+	chmod 777 /sys/class/leds/vibrator_aw8695/haptic_audio
+	chmod 777 /sys/class/leds/vibrator_aw8695/awrw
+	chmod 666 /sys/class/leds/vibrator_aw8695/haptic_audio_time
+	chmod 666 /sys/class/leds/vibrator/state
+	chmod 666 /sys/class/leds/vibrator/rtp
+	chmod 666 /sys/class/leds/vibrator/activate
+	chmod 666 /sys/class/leds/vibrator/activate_mode
+	chmod 666 /sys/class/leds/vibrator/duration
+	chmod 666 /sys/class/leds/vibrator/index
+	chmod 666 /sys/class/leds/vibrator/seq
+	chmod 666 /sys/class/leds/vibrator/vmax
+	chmod 666 /sys/class/leds/vibrator/f0_save
+	chmod 666 /sys/class/leds/vibrator/touch
+	chmod 666 /sys/class/leds/vibrator/touch_enable
+	chmod 666 /sys/class/leds/vibrator/brightness
+	chmod 777 /sys/class/leds/vibrator/haptic_audio
+	chmod 777 /sys/class/leds/vibrator/awrw
+	chmod 666 /sys/class/leds/vibrator/haptic_audio_time
+
+	chmod 666 /sys/class/leds/vibrator_r/state
+	chmod 666 /sys/class/leds/vibrator_r/rtp
+	chmod 666 /sys/class/leds/vibrator_r/activate
+	chmod 666 /sys/class/leds/vibrator_r/activate_mode
+	chmod 666 /sys/class/leds/vibrator_r/duration
+	chmod 666 /sys/class/leds/vibrator_r/index
+	chmod 666 /sys/class/leds/vibrator_r/seq
+	chmod 666 /sys/class/leds/vibrator_r/vmax
+	chmod 666 /sys/class/leds/vibrator_r/f0_save
+	chmod 666 /sys/class/leds/vibrator_r/touch
+	chmod 666 /sys/class/leds/vibrator_r/touch_enable
+	chmod 666 /sys/class/leds/vibrator_r/brightness
+	chmod 777 /sys/class/leds/vibrator_r/haptic_audio
+	chmod 777 /sys/class/leds/vibrator_r/awrw
+	chmod 666 /sys/class/leds/vibrator_r/haptic_audio_time
+	chmod 666 /sys/class/leds/vibrator_r/dual_rtp
+	chmod 666 /sys/class/leds/vibrator_r/dual_mode
+	chmod 666 /sys/class/leds/vibrator_r/dual_activate
+	chmod 666 /sys/class/leds/vibrator_r/dual_duration
+	chmod 666 /sys/class/leds/vibrator_r/dual_index
+
+	chmod 666 /sys/class/leds/vibrator_l/state
+	chmod 666 /sys/class/leds/vibrator_l/rtp
+	chmod 666 /sys/class/leds/vibrator_l/activate
+	chmod 666 /sys/class/leds/vibrator_l/activate_mode
+	chmod 666 /sys/class/leds/vibrator_l/duration
+	chmod 666 /sys/class/leds/vibrator_l/index
+	chmod 666 /sys/class/leds/vibrator_l/seq
+	chmod 666 /sys/class/leds/vibrator_l/vmax
+	chmod 666 /sys/class/leds/vibrator_l/f0_save
+	chmod 666 /sys/class/leds/vibrator_l/touch
+	chmod 666 /sys/class/leds/vibrator_l/touch_enable
+	chmod 666 /sys/class/leds/vibrator_l/brightness
+	chmod 666 /sys/class/leds/vibrator_l/haptic_audio
+	chmod 777 /sys/class/leds/vibrator_l/awrw
+	chmod 666 /sys/class/leds/vibrator_l/haptic_audio_time
+	chmod 666 /sys/class/leds/vibrator_l/dual_rtp
+	chmod 666 /sys/class/leds/vibrator_l/dual_mode
+	chmod 666 /sys/class/leds/vibrator_l/dual_activate
+	chmod 666 /sys/class/leds/vibrator_l/dual_duration
+	chmod 666 /sys/class/leds/vibrator_l/dual_index
+	
+	chmod 666 /sys/class/leds/vibrator_y/state
+	chmod 666 /sys/class/leds/vibrator_y/rtp
+	chmod 666 /sys/class/leds/vibrator_y/activate
+	chmod 666 /sys/class/leds/vibrator_y/activate_mode
+	chmod 666 /sys/class/leds/vibrator_y/duration
+	chmod 666 /sys/class/leds/vibrator_y/index
+	chmod 666 /sys/class/leds/vibrator_y/seq
+	chmod 666 /sys/class/leds/vibrator_y/vmax
+	chmod 666 /sys/class/leds/vibrator_y/f0_save
+	chmod 666 /sys/class/leds/vibrator_y/touch
+	chmod 666 /sys/class/leds/vibrator_y/touch_enable
+	chmod 666 /sys/class/leds/vibrator_y/brightness
+	chmod 666 /sys/class/leds/vibrator_y/haptic_audio
+	chmod 777 /sys/class/leds/vibrator_y/awrw
+	chmod 666 /sys/class/leds/vibrator_y/haptic_audio_time
+	chmod 666 /sys/class/leds/vibrator_y/dual_rtp
+	chmod 666 /sys/class/leds/vibrator_y/dual_mode
+	chmod 666 /sys/class/leds/vibrator_y/dual_activate
+	chmod 666 /sys/class/leds/vibrator_y/dual_duration
+	chmod 666 /sys/class/leds/vibrator_y/dual_index
+
+
+    #DP function
+    chown system system /sys/kernel/lcd_enhance/edid_modes
+    chown system system /sys/kernel/lcd_enhance/hpd
+    chown system system /sys/kernel/lcd_enhance/selected_edid
+    chmod 666 /sys/kernel/lcd_enhance/edid_modes
+    chmod 666 /sys/kernel/lcd_enhance/hpd
+    chmod 666 /sys/kernel/lcd_enhance/selected_edid
+#    # Nubia add end
+

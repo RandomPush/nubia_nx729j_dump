@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NUBIAUI-Theme>
+    <!--主题英文名称，不同的主题包不可重名-->
+    <title>Superpower Universe</title>
+
+    <!--主题中文名称-->
+    <title_cn>超能宇宙</title_cn>
+    <title_index>0</title_index>
+    <!--作者名称，由设计师自由填写，允许重名-->
+    <author>nubia团队</author>
+
+    <!--主题包版本号名称，按标准格式“1.0.0”填写(标准格式为三位10以内数字，用“.”符号隔开)-->
+    <versionName>1.0.0</versionName>
+
+    <!--主题包简介-->
+    <description>突破边界，塑造具有未来科技美感的新形态，从而构建起一个充满能量的桌面体系！nubia智能手机官方主题，希望你喜欢。</description>
+
+    <!--主题包更新说明，若为升级版本，则需要填写更新说明,若无，则默认填写null-->
+    <updateInfo>null</updateInfo>
+
+    <!--主题分类，填写以下中的一个：简约、酷炫、动漫、风景、爱情、美女、帅哥、文艺小清新-->
+    <category>简约</category>
+
+    <!--主题标签，不同的标签以中文逗号隔开-->
+    <tag>简约，扁平，精致</tag>
+
+    <!--主题建议价格，0表示免费-->
+    <price>0</price>
+
+    <!--主题支持的分辨率，填写以下中的一个：FHD(其他待后续补充)-->
+    <screen>FHD</screen>
+
+    <!--【重要】主以下信息由运营人员提供，请不要随意更改-->
+    <!--【重要】主题包代数,与Nubia UI匹配，请不要随意更改-->
+    <themeGeneration>3</themeGeneration>
+
+    <!--主题公司来源名称，可填写中文或英文名称（若为公司，则填写公司名称，若为个人，则填写“个人”）-->
+    <source>努比亚技术有限公司</source>
+
+    <!--作者ID，填写作者的nubia账号登录名（可到Nubia官网进行申请）-->
+    <author_id>123456789@nubia.cn</author_id>
+
+    <edit_date>2022-12-15</edit_date>
+
+    <associate_font>Default Font</associate_font>
+
+    <sort_id>50.01.001</sort_id>
+
+    <icon_unity>true</icon_unity>
+    <is_classic>true</is_classic>
+    <is_dark_ui_mode>true</is_dark_ui_mode>
+    <!--是否炫彩主题-->
+    <colorful>true</colorful>
+    <!--手机铃声-->
+    <phone_ringtone>/system/media/audio/ringtones/Alpha-5.ogg</phone_ringtone>
+    <phone_ringtone_2>/system/media/audio/ringtones/Alpha-5.ogg</phone_ringtone_2>
+    <!--短信铃声-->
+    <message_sound>/system/media/audio/notifications/magic_bell.ogg</message_sound>
+    <!--通知提示音-->
+    <notification_sound>/system/media/audio/notifications/Jingle.ogg</notification_sound>
+    <!--指纹动画样式-->
+    <nubia_fingerprint_anim>RayTracing</nubia_fingerprint_anim>
+    <!--熄屏显示aod-->
+    <aod_style>aod_main_whole_style=3;aod_main_child_style=0;aod_main_online_path=null;aod_main_random_style=0;aod_main_widget_color=-4736579,-4736579,-4736579,</aod_style>
+</NUBIAUI-Theme>

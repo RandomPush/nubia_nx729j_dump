@@ -1,0 +1,296 @@
+# Copyright (c) 2011-2013, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+#nubia, tp&lcd node start
+#on post-fs-data
+#touchkey
+on post-fs-data
+    mkdir /data/rawdata/files 0775 system system
+	chmod 0777 /system/bin/gt_mp_test
+	chmod 0777 /vendor/bin/gt_mp_test
+	chmod 0777 /vendor/firmware/gt_mp_test
+	chmod 0777 /dev/gtp_tools
+	chmod 0777 /dev/aw9610x_diff
+	chmod 0777 /vendor/bin/hw/aw_algo.so
+	chmod 0777 /data/rawdata/files/GT9897_test_sensor_255_20201120.tporder
+
+     chown system system /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/mode
+      chown system system /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/R_sensitivity
+     chown system system /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/key_signal
+      chown system system /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/firm_version
+	  
+	chown system system /sys/class/leds/sar0/mode_operation
+	chown system system /sys/class/leds/sar0/diff
+	chown system system /sys/class/leds/sar0/sensy_config
+	chown system system /sys/class/leds/sar0/parasitic_data
+	chown system system /sys/class/leds/sar0/aot_cali
+	chown system system /sys/class/leds/sar0/baseline
+	chown system system /sys/class/leds/sar0 
+	
+	chown system system /sys/class/leds/sar1/mode_operation
+	chown system system /sys/class/leds/sar1/diff
+	chown system system /sys/class/leds/sar1/sensy_config
+	chown system system /sys/class/leds/sar1/parasitic_data
+	chown system system /sys/class/leds/sar1/aot_cali
+	chown system system /sys/class/leds/sar1/baseline
+	chown system system /sys/class/leds/sar1 
+	
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-0/0-0012/diff 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-0/0-0012/aot_cali         
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-0/0-0012/aot_cali     
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-0/0-0012/parasitic_data 
+    chown system system/sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/diff 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/aot_cali         
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/baseline     
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/parasitic_data 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/diff 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/aot_cali         
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/baseline     
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/parasitic_data 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/diff 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/aot_cali         
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/baseline     
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/parasitic_data 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/diff 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/aot_cali         
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/baseline     
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/parasitic_data 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/diff 
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/aot_cali         
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/baseline     
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/parasitic_data 
+	
+	
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-0/0-0013/aot_cali                                 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-0/0-0013/parasitic_data     
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-0/0-0013/diff
+	
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-1/1-0013/aot_cali                                 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-1/1-0013/parasitic_data     
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-1/1-0013/diff
+	
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-2/2-0013/aot_cali                                 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-2/2-0013/parasitic_data     
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-2/2-0013/diff
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/aot_cali                                 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/parasitic_data     
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/diff
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/aot_cali                                 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/parasitic_data     
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/diff 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-6/6-0013/aot_cali                                 
+    chown system system/sys/devices/platform/soc/a98000.i2c/i2c-6/6-0013/parasitic_data     
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-6/6-0013/diff
+	
+    chown system system /sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/parasitic_data  
+ 	
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/parasitic_data         
+	                                              
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/aot_cali        
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/diff 
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/diff         
+	                                              
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/aot_cali        
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/parasitic_data 
+	
+    chown system system /sys/devices/platform/soc/a80000.i2c/i2c-2/2-0013/diff
+    chown system system /sys/devices/platform/soc/a80000.i2c/i2c-2/2-0013/operation_mode
+    chown system system /sys/devices/platform/soc/a80000.i2c/i2c-2/2-0013/click_slide_mode
+	
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/key_signal
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/firm_version
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/L_sensitivity
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/mode
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/R_sensitivity
+	
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/key_signal
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/firm_version
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/L_sensitivity
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/mode
+    chown system system /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/R_sensitivity
+	
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/enable
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/fpswitch
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/bsp_mode
+	chown system system /sys/devices/platform/nubia_goodix_ts.0/mode
+	chown system system /sys/devices/platform/nubia_goodix_ts.0/send_cfg
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/virtual_tp
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/fp
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/chip_info
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/prevention
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/sensitivity
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/open_sensitivity
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/separation
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/rate
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/levelregion
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/highrate
+    chown system system /sys/devices/platform/nubia_goodix_ts.0/gesture/open_prevention
+    chown system system /sys/kernel/tp_node/fp_mode
+    chmod 666 /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/mode
+    chmod 666 /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/R_sensitivity
+    chmod 666 /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/key_signal
+    chmod 666 /sys/devices/platform/soc/998000.i2c/i2c-1/1-0010/firm_version
+
+	
+    chmod 666 /sys/class/leds/sar0
+    chmod 666 /sys/class/leds/sar0/mode_operation       
+    chmod 666 /sys/class/leds/sar0/baseline   
+    chmod 666 /sys/class/leds/sar0/parasitic_data 
+    chmod 666 /sys/class/leds/sar0/diff
+	chmod 666 /sys/class/leds/sar0/sensy_config
+    chmod 666 /sys/class/leds/sar0/aot_cali    
+    chmod 666 /sys/class/leds/sar1
+    chmod 666 /sys/class/leds/sar1/mode_operation       
+    chmod 666 /sys/class/leds/sar1/baseline   
+    chmod 666 /sys/class/leds/sar1/parasitic_data 
+    chmod 666 /sys/class/leds/sar1/diff
+	chmod 666 /sys/class/leds/sar1/sensy_config
+	chmod 666 /sys/class/leds/sar1/aot_cali
+	
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/baseline     
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-1/1-0012/parasitic_data 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/diff 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/aot_cali         
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/baseline     
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-2/2-0012/parasitic_data 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/diff 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/aot_cali         
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/baseline     
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-5/5-0012/parasitic_data 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/diff 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/aot_cali         
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/baseline     
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-3/3-0012/parasitic_data 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/diff 
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/aot_cali         
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/baseline     
+    chmod 666 /sys/devices/platform/soc/a94000.i2c/i2c-4/4-0012/parasitic_data 
+	
+	
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-0/0-0013/aot_cali                                 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-0/0-0013/parasitic_data     
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-0/0-0013/diff
+	
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-1/1-0013/aot_cali                                 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-1/1-0013/parasitic_data     
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-1/1-0013/diff
+	
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-2/2-0013/aot_cali                                 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-2/2-0013/parasitic_data     
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-2/2-0013/diff
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/aot_cali                                 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/parasitic_data     
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-4/4-0013/diff
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/aot_cali                                 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/parasitic_data     
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-5/5-0013/diff 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-6/6-0013/aot_cali                                 
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-6/6-0013/parasitic_data     
+    chmod 666 /sys/devices/platform/soc/a98000.i2c/i2c-6/6-0013/diff
+	
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/R_sensitivity
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/key_signal
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-3/3-0010/firm_version
+	
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/L_sensitivity
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/mode
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/R_sensitivity
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/key_signal
+    chmod 666 /sys/devices/platform/soc/a88000.i2c/i2c-2/2-0010/firm_version
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/enable
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/virtual_tp
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/fpswitch
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/fp
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/chip_info
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/prevention
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/sensitivity
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/open_sensitivity
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/separation
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/rate
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/levelregion
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/highrate
+    chmod 666 /sys/devices/platform/nubia_goodix_ts.0/gesture/open_prevention
+    chmod 666 /sys/kernel/tp_node/fp_mode
+	chmod 666 /sys/devices/platform/nubia_goodix_ts.0/send_cfg
+	chmod 666 /sys/devices/platform/nubia_goodix_ts.0/bsp_mode
+	chmod 666 /sys/devices/platform/nubia_goodix_ts.0/mode
+
+ 
+#lcd
+    chown system system /sys/kernel/lcd_enhance/cabc
+    chown system system /sys/kernel/lcd_enhance/lcd_reg
+    chown system system /sys/kernel/lcd_enhance/dfps
+    chown system system /sys/kernel/lcd_enhance/nubia_panel_reg
+    chown system system /sys/kernel/lcd_enhance/hbm_mode
+    chown system system /sys/kernel/lcd_enhance/panel_firmware_id
+    chown system system /sys/kernel/lcd_enhance/aod_brightness
+    chown system system /sys/kernel/lcd_enhance/lhbm_mode
+    chown system system /sys/kernel/lcd_enhance/bl_limit
+    chmod 0666 /sys/kernel/lcd_enhance/bl_limit
+    chown system system /sys/kernel/lcd_enhance/hbm_state
+    chown system system /sys/kernel/lcd_enhance/hbm_feedback
+on post-fs-data
+    restorecon /sys/kernel/lcd_enhance/cabc
+    restorecon /sys/kernel/lcd_enhance/dfps
+    restorecon /sys/kernel/lcd_enhance/hbm_mode
+    restorecon /sys/kernel/lcd_enhance/panel_firmware_id
+    restorecon /sys/kernel/lcd_enhance/aod_brightness
+    restorecon /sys/kernel/lcd_enhance/lhbm_mode
+    restorecon /sys/kernel/lcd_enhance/bl_limit
+    restorecon /sys/kernel/lcd_enhance/hbm_state
+    restorecon /sys/kernel/lcd_enhance/hbm_feedback
+    
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/enable
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/virtual_tp
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/fpswitch
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/send_cfg
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/bsp_mode
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/mode
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/fp
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/chip_info
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/prevention
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/sensitivity
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/open_sensitivity
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/separation
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/rate
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/levelregion
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/highrate
+   restorecon /sys/devices/platform/nubia_goodix_ts.0/gesture/open_prevention
+   restorecon /sys/kernel/tp_node/fp_mode
+#end
+on property:sys.nubia.fpmode.private=1
+    write /sys/devices/platform/nubia_goodix_ts.0/fpswitch   1
+    write /sys/devices/platform/nubia_goodix_ts.0/gesture/fp 1
+on property:sys.nubia.fpmode.private=0
+    write /sys/devices/platform/nubia_goodix_ts.0/fpswitch   0
+    write /sys/devices/platform/nubia_goodix_ts.0/gesture/fp 0
+
+
+
+#nubia end

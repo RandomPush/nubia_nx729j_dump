@@ -1,0 +1,42 @@
+service sec_chip_service /vendor/bin/sec_nfc_check
+    class hal
+    user nfc
+    group nfc
+    oneshot
+    disabled
+
+service sec_inform_service /vendor/bin/sec_nfc_inform
+    class hal
+    user nfc
+    group nfc
+    oneshot
+    disabled
+
+
+on boot
+   start sec_chip_service
+
+on property:vendor.nfc.request.stat=1
+    start sec_inform_service
+
+on property:vendor.nfc.request.stat=3
+    start sec_inform_service
+
+on property:vendor.nfc.request.stat=5
+    start sec_inform_service
+
+on property:vendor.nfc.request.stat=7
+    start sec_inform_service
+
+
+on post-fs-data
+# NFC storage
+#    mkdir /data/nfc
+
+# NFC permission
+    chown nfc nfc /dev/sec-nfc
+    chmod 0770 /dev/sec-nfc
+
+#    chown nfc nfc /data/nfc
+#    chmod 0770 /data/nfc
+

@@ -1,0 +1,55 @@
+# /persist --> /mnt/vendor/persist, init.qcom.rc has error, correct it
+on boot
+    mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
+
+# ftmdtest
+service nbftmd /vendor/bin/ftmdaemon -n
+    class late_start
+    user root
+    group root
+    disabled
+    seclabel u:r:ftmdtest:s0
+    oneshot
+
+on property:vendor.wl.bt.ftmdaemon=1
+    start nbftmd
+
+on property:vendor.wl.bt.ftmdaemon=0
+    stop nbftmd
+
+# btconfig_shell
+on property:vendor.wl.bt.btconfig=1
+    setprop vendor.wl.bt.btconfig.status "running"
+	exec_background - root root -- /vendor/bin/sh /vendor/bin/btconfig_shell.sh ${vendor.wl.bt.btconfig.cmd}
+
+on property:vendor.wl.bt.btconfig=0
+	setprop vendor.wl.bt.btconfig.cmd "stop"
+	setprop vendor.wl.bt.btconfig 1
+
+# 8615 : dut test
+on property:vendor.wl.bt.8615.dut=1
+	setprop vendor.wl.bt.btconfig.cmd "edutm"
+    setprop vendor.wl.bt.btconfig 1
+
+on property:vendor.wl.bt.8615.dut=0
+    setprop vendor.wl.bt.btconfig 0
+
+# 8615 : wireless_test
+service wirelesstest /vendor/bin/wireless_test
+    class late_start
+    user root
+    group root
+    socket wirelesstest stream 666 bluetooth bluetooth
+    disabled
+    seclabel u:r:bluetooth_ext_vnd:s0
+    oneshot
+
+on property:vendor.wl.bt.8615.wltest=1
+    start wirelesstest
+
+on property:vendor.wl.bt.8615.wltest=0
+    stop wirelesstest
+
+# 8615 : wdsdaemon
+on property:vendor.wl.bt.wdsdaemon=1
+    exec_background - root root -- /vendor/bin/sh /vendor/bin/btconfig_wdsdaemon.sh

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Included>
+    <Decoders>
+        <!-- C2 decoders -->
+        <!-- DTS_CODEC2 START -->
+        <MediaCodec name="c2.dts.dtshd.decoder" type="audio/dts">
+            <Alias name="OMX.DTS.audio_decoder.dts" />
+            <Limit name="channel-count" max="8" />
+        </MediaCodec>
+        <!-- DTS_CODEC2 END -->
+    </Decoders>
+</Included>

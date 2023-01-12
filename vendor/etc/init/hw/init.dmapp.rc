@@ -1,0 +1,23 @@
+# Copyright (c) 2016, nubia. All rights reserved.
+#
+# init.dmapp.rc
+
+
+
+#NUBIA: dm instructions
+service dmapp  /vendor/bin/dmapp
+    class main
+    seclabel u:r:dm:s0
+    group  oem_2901 usb radio cache inet misc audio diag vendor_qti_diag bluetooth drmrpc mediadrm system
+
+#Start Dmapp Services
+on boot
+    chmod 0666 /mnt/vendor/persist/wlan_mac.bin
+    mkdir /mnt/vendor/persist/factory/ 0777 system system
+    chown wifi wifi /mnt/vendor/persist/wlan_mac.bin
+    start dmapp
+
+#nubia factory reset interface
+on property:vendor.sys.boot_mode=nubia-factory-reset
+    nubia_factory_reset
+

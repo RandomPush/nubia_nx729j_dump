@@ -1,0 +1,14 @@
+
+on post-fs-data
+    chown system system /sys/kernel/nb_boost/type
+    chmod 0770 /sys/kernel/nb_boost/type
+
+	chown system system /sys/kernel/nb_boost/optype
+    chmod 0770 /sys/kernel/nb_boost/optype
+	
+	chown system system /sys/kernel/nb_boost/level
+    chmod 0770 /sys/kernel/nb_boost/level
+	
+	chown system system /sys/kernel/nb_boost/pid
+    chmod 0770 /sys/kernel/nb_boost/pid
+

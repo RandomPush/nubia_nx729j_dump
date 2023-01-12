@@ -1,0 +1,9 @@
+service ltm /vendor/bin/ltm ${sys.nubia.ltm}
+    class main
+    user system
+    group system
+    oneshot
+    seclabel u:r:ltm:s0
+
+on property:sys.nubia.ltm=*
+        start ltm

@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<mfnr_network_denoise_config>
+    <PhoneConfigParam cache_path="/data/data/com.android.camera/cache/" phone_id="NX729J"
+        k1_net="0.0004897055f" k2_net="0.01507620f" s1_net="7.910723e-7f" s2_net="0.002898401f"
+        s3_net="-1.223214f" black_level_net="64" white_level_net="1023" iso_a="2000"
+        model_width="608" model_height="608" tflite_model="tflite_model_denoised592_608_608">
+        <CameraConfigParam camera_id="0" factor_rough="8" k1_camera="0.00028695842095107876f"
+            k2_camera="0.011337446360002335f" s1_camera="4.357176259519381e-07f"
+            s2_camera="-0.0009411031583656042f" s3_camera="0.8109478621108299f"
+            black_level_camera="64" white_level_camera="1023" max_analog_iso="6400" num_w="4"
+            num_h="3" threshold_dpc_luma_percent="0.005f"></CameraConfigParam>
+    </PhoneConfigParam>
+</mfnr_network_denoise_config>

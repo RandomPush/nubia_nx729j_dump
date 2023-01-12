@@ -1,0 +1,154 @@
+#nubia add for performance
+#
+#Performance optimization extension centralized modification for easy to maintain and porting, reduce conflict and redundancy.
+#
+
+#on early-init
+on init
+    #for cpuset perf
+    #write /dev/cpuset/restricted/cpus "0-2"
+
+#on post-fs
+on early-boot
+    #same funcation as init.qcom.early_boot.sh
+    #exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
+
+on boot
+    #for cpuset perf
+    write /dev/cpuset/systemserver/cpus 0-7
+    write /dev/cpuset/compserver/cpus 0-7
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-2
+
+    #nubia begin add for TGPA
+    write /dev/cpuset/bigcluster/cpus 3-7
+    write /dev/cpuset/littlecluster/cpus 0-2
+    chown system system /dev/cpuset/bigcluster/tasks
+    chown system system /dev/cpuset/littlecluster/tasks
+    #nubia add for TGPA end
+    write /dev/cpuset/restricted/cpus "0-2"
+
+on post-fs-data
+    #move to system core init.rc
+    #chown system system /sys/kernel/cpu_pressure/level
+    #chmod 444 /sys/kernel/cpu_pressure/level
+    #nubia add for sched
+
+    chmod 0666 /sys/fork_monitor/debug
+    chmod 0666 /sys/fork_monitor/opts
+    chmod 0666 /sys/fork_monitor/enable
+    chown system system /sys/fork_monitor/opts
+    chown system system /sys/fork_monitor/debug
+    chown system system /sys/fork_monitor/enable
+    #nubia add end
+
+#for input boost perf
+on property:nubia.perf.cpu.input.boost.freq=0
+    write /proc/sys/walt/input_boost/input_boost_freq "1382400 0 0 0 0 0 0 0"
+on property:nubia.perf.cpu.input.boost.freq=1
+    write /proc/sys/walt/input_boost/input_boost_freq "1324800 0 0 0 1171200 0 0 0"
+on property:nubia.perf.cpu.input.boost.ms=0
+    write /proc/sys/walt/input_boost/input_boost_ms "120"
+on property:nubia.perf.cpu.input.boost.ms=1
+    write /proc/sys/walt/input_boost/input_boost_ms "200"
+
+#for cpufreq ctrl perf
+on property:nubia.perf.cpu.cpufreq.ctrl=*
+    write /sys/devices/system/cpu/cpu0/cpufreq/walt/cpufreq_ctrl ${nubia.perf.cpu.cpufreq.ctrl}
+
+
+#init.nubia.post-boot.sh same funcation as init.qcom.post_boot.sh
+
+#nubia add for hardware boost
+on property:nubia.perf.cache.boost=1
+    write /sys/devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor "performance"
+    #write /sys/devices/platform/soc/soc:qcom,cpu0-cpu-l3-lat/devfreq/soc:qcom,cpu0-cpu-l3-lat/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu0-cpu-llcc-lat/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu0-llcc-ddr-lat/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor "performance"
+    #write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-l3-lat/devfreq/soc:qcom,cpu4-cpu-l3-lat/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-ddr-qoslat/devfreq/soc:qcom,cpu4-cpu-ddr-qoslat/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-llcc-lat/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor "performance"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-llcc-ddr-lat/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor "performance"
+    #write /sys/devices/platform/soc/soc:qcom,cpu7-cpu-l3-lat/devfreq/soc:qcom,cpu7-cpu-l3-lat/governor "performance"
+
+on property:nubia.perf.cache.boost=0
+    write /sys/devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor "bw_hwmon"
+    write /sys/devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor "bw_hwmon"
+    #write /sys/devices/platform/soc/soc:qcom,cpu0-cpu-l3-lat/devfreq/soc:qcom,cpu0-cpu-l3-lat/governor "mem_latency"
+    write /sys/devices/platform/soc/soc:qcom,cpu0-cpu-llcc-lat/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor "mem_latency"
+    write /sys/devices/platform/soc/soc:qcom,cpu0-llcc-ddr-lat/devfreq/soc:qcom,cpu0-llcc-ddr-lat/governor "mem_latency"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor "compute"
+    #write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-l3-lat/devfreq/soc:qcom,cpu4-cpu-l3-lat/governor "mem_latency"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-ddr-qoslat/devfreq/soc:qcom,cpu4-cpu-ddr-qoslat/governor "mem_latency"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-cpu-llcc-lat/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor "mem_latency"
+    write /sys/devices/platform/soc/soc:qcom,cpu4-llcc-ddr-lat/devfreq/soc:qcom,cpu4-llcc-ddr-lat/governor "mem_latency"
+    #write /sys/devices/platform/soc/soc:qcom,cpu7-cpu-l3-lat/devfreq/soc:qcom,cpu7-cpu-l3-lat/governor "mem_latency"
+
+#gpuoverclock for default value
+on property:nubia.perf.gpuoc.thermalzone=0
+    write /sys/class/thermal/thermal_zone25/trip_point_0_temp 95000
+    write /sys/class/thermal/thermal_zone64/trip_point_0_temp 1
+    write /sys/class/thermal/thermal_zone65/trip_point_0_temp 1
+    write /sys/class/thermal/thermal_zone66/trip_point_0_temp 1
+    write /sys/class/thermal/thermal_zone72/trip_point_0_temp 1
+    write /sys/class/thermal/thermal_zone73/trip_point_0_temp 1
+    write /sys/class/thermal/thermal_zone74/trip_point_0_temp 1
+
+#gpuoverclock for super thermal
+on property:nubia.perf.gpuoc.thermalzone=1
+    write /sys/class/thermal/thermal_zone25/trip_point_0_temp 125000
+    write /sys/class/thermal/thermal_zone64/trip_point_0_temp 2
+    write /sys/class/thermal/thermal_zone65/trip_point_0_temp 2
+    write /sys/class/thermal/thermal_zone66/trip_point_0_temp 2
+    write /sys/class/thermal/thermal_zone72/trip_point_0_temp 2
+    write /sys/class/thermal/thermal_zone73/trip_point_0_temp 2
+    write /sys/class/thermal/thermal_zone74/trip_point_0_temp 2
+#nubia add end
+#add for control device temperature by adjustment CFS scheduling strategy default value
+on property:nubia.perf.temp.ctrl.by.cfs=0
+    write /proc/sys/kernel/sched_latency_ns 10000000
+    write /proc/sys/kernel/sched_min_granularity_ns 3000000
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/pl 1
+    write /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us 0
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/up_rate_limit_us 0
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/down_rate_limit_us 0
+
+#add for control device temperature by adjustment CFS scheduling strategy new value
+on property:nubia.perf.temp.ctrl.by.cfs=1
+    write /proc/sys/kernel/sched_latency_ns 10000000
+    write /proc/sys/kernel/sched_min_granularity_ns 1000000000
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/pl 1
+    write /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us 0
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/up_rate_limit_us 0
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/down_rate_limit_us 0
+
+#add for touping
+on property:sys.nubia.tp.wfdconfig=*
+    setprop persist.vendor.debug.wfd.config ${sys.nubia.tp.wfdconfig}
+#add for JIRA-NX709SV1A-2737、NX709SV1A-2749(fix-bug)
+on property:nubia.perf.sgroup=*
+    write /proc/sys/walt/sched_group_id ${nubia.perf.sgroup}
+on property:nubia.perf.cpushares=1
+    write /dev/cpuctl/foreground/cpu.shares 914
+    write /dev/cpuctl/system-background/cpu.shares 914
+    write /dev/cpuctl/system/cpu.shares 914
+    write /dev/cpuctl/background-ext/cpu.shares 914
+    write /dev/cpuctl/background/cpu.shares 914
+on property:nubia.perf.cpushares=0
+    write /dev/cpuctl/foreground/cpu.shares 1024
+    write /dev/cpuctl/system-background/cpu.shares 1024
+    write /dev/cpuctl/system/cpu.shares 1024
+    write /dev/cpuctl/background-ext/cpu.shares 1024
+    write /dev/cpuctl/background/cpu.shares 1024
+#add end
+#add for JIRA-NX679JV1A-7618(fix-bug)
+on property:nubia.perf.vd.created=*
+    write /dev/cpuset/compserver/cpus ${nubia.perf.vd.created}
+
+#add for monkey swappiness
+on property:sys.nubia.monkey=true
+    write /proc/sys/vm/swappiness 133
+on property:sys.nubia.monkey=false
+    write /proc/sys/vm/swappiness 100

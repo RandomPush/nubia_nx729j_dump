@@ -1,0 +1,17 @@
+
+on boot
+    start vendor.nubia_hal_server
+
+service vendor.nubia_hal_server /vendor/bin/nubia_hal_server
+    class hal
+    user system
+    group system
+    capabilities KILL
+    disabled
+
+on post-fs-data
+    mkdir /data/vendor/nubia_hal_server 0770 system system
+    chmod 0770 /data/vendor/nubia_hal_server
+
+
+

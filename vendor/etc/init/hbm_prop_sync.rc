@@ -1,0 +1,4 @@
+on property:sys.brightness.hbm.mode=*
+    setprop vendor.brightness.hbm.mode ${sys.brightness.hbm.mode}
+on property:persist.sys.nubia.eye.protection=*
+    setprop persist.vendor.nubia.eye.protection ${persist.sys.nubia.eye.protection}

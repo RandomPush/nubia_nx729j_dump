@@ -1,0 +1,6 @@
+service vendor-media-c2-hal-1-0-dtscodec /vendor/bin/hw/vendor.hardware.media.c2@1.0-dtscodec-service
+    class hal
+    user mediacodec
+    group mediadrm camera drmrpc system
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

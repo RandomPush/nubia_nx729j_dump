@@ -1,0 +1,12 @@
+service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+    # "class hal" causes a race condition on some devices due to files created
+    # in /data. As a workaround, postpone startup until later in boot once
+    # /data is mounted.
+    class late_start
+    user system
+    group system input uhid
+    task_profiles ProcessCapacityHigh
+
+on property:nubia.perf.restart.fps_hal=restart
+    stop vendor.fps_hal
+    start vendor.fps_hal
