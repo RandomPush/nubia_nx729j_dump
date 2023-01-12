@@ -1,0 +1,4 @@
+mcfg_sw/generic/China/CMCC/Commercial/Volte_OpenMkt/mcfg_sw.mbn
+mcfg_sw/generic/China/CT/Commercial/hVoLTE_OpenMkt/mcfg_sw.mbn
+mcfg_sw/generic/China/CU/Commercial/VoLTE/mcfg_sw.mbn
+mcfg_sw/generic/common/ROW/Commercial/mcfg_sw.mbn

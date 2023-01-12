@@ -1,0 +1,14 @@
+# qssi-user 13 TKQ1.220915.002 eng.nubia.20221114.110025 release-keys
+- manufacturer: nubia
+- platform: kalama
+- codename: NX729J
+- flavor: qssi-user
+- release: 13
+- id: TKQ1.220915.002
+- incremental: eng.nubia.20221114.110025
+- tags: release-keys
+- fingerprint: nubia/NX729J/NX729J:13/TKQ1.220915.002/eng.nubia.20221114.120645:user/release-keys
+- is_ab: true
+- brand: nubia
+- branch: qssi-user-13-TKQ1.220915.002-eng.nubia.20221114.110025-release-keys
+- repo: nubia_nx729j_dump

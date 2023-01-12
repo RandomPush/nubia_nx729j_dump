@@ -1,0 +1,22 @@
+# caputre uart log
+service btcaptureuart /system/bin/sh /system_ext/etc/bluetooth/nbbt_capture_uart.sh
+    class late_start
+    user root
+    group root system bluetooth everybody
+    disabled
+    oneshot
+    seclabel u:r:btcaptureuart:s0
+
+on property:bluetooth.nblog.capture.uart=1
+    start btcaptureuart
+
+on property:bluetooth.nblog.capture.uart=0
+    stop btcaptureuart
+
+# dump soc a2dp/sco to snoop
+on property:persist.bluetooth.dump.soc.sound=true
+    setprop persist.vendor.service.bdroid.soclog 11
+
+on property:persist.bluetooth.dump.soc.sound=false
+    setprop persist.vendor.service.bdroid.soclog ""
+# dump soc a2dp/sco to snoop end

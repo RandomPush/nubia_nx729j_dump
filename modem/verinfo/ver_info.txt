@@ -1,0 +1,26 @@
+{
+    "Image_Build_IDs": {
+        "adsp": "ADSP.HT.5.8-00970-KAILUA-1.19151.2", 
+        "aop": "AOP.HO.5.0-00212-KAILUA_E-1.19151.5", 
+        "boot": "BOOT.MXF.2.1.1-00073-KAILUA-1.19151.4", 
+        "btfm_hmt": "BTFW.HAMILTON.2.0.0-00498-PATCHZ-1", 
+        "btfm_hsp": "BTFW.HSP.2.1.1-00199-PATCHZ-1", 
+        "cdsp": "CDSP.HT.2.8-00624-KAILUA-1.19151.2", 
+        "common": "Kailua.LA.1.0.r1-00962-STD.PROD-1.19151.20", 
+        "cpucp": "CPUCP.FW.1.0-00058-KAILUA.EXT-1.19151.3", 
+        "cpuss_vm": "CPUSS.CPUSYS.VM.1.0-00006-KAILUA.EXT-1", 
+        "glue": "GLUE.KAILUA.LA.1.0-00328-NOOP_TEST_KAILUA-1", 
+        "modem": "MPSS.DE.3.0-02177.2-KAILUA_GEN_PACK-2.19151.13", 
+        "spss": "SPSS.A1.1.7-00069-KAILUA-2", 
+        "tz": "TZ.XF.5.24-00065-KAILUAAAAAANAZT-1.19151.4", 
+        "tz_apps": "TZ.APPS.1.24-00018-KAILUAAAAAANAZT-1", 
+        "wlan_hmt": "WLAN.HMT.1.0-03639-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1.19151.20", 
+        "wlan_hsp": "WLAN.HSP.2.0-01993-QCAHSPSWPL_V1_V2_SILICONZ-1.19151.3"
+    }, 
+    "Metabuild_Info": {
+        "Meta_Build_ID": "Kailua.LA.1.0.r1-00962-STD.PROD-1.19151.20", 
+        "Product_Flavor": "asic", 
+        "Time_Stamp": "2022-12-27 17:50:46"
+    }, 
+    "Version": "1.0"
+}

@@ -1,0 +1,31 @@
+#nubia add for performance
+#
+#Performance optimization extension centralized modification for easy to maintain and porting, reduce conflict and redundancy.
+#
+
+on post-fs-data
+    #nubia add for critical thread
+    chmod 0664 /sys/nbia/sched_nbia_render_tid_array
+    chown system system /sys/nbia/sched_nbia_render_tid_array
+
+    chmod 0664 /sys/nbia/sched_prio_adjusted_info
+    chown system system /sys/nbia/sched_prio_adjusted_info
+
+    chmod 0664 /sys/nbia/sched_affinity_ctrl
+    chown system system /sys/nbia/sched_affinity_ctrl
+
+    chmod 0664 /sys/nbia/sched_class_persisted
+    chown system system /sys/nbia/sched_class_persisted
+
+    chmod 0664 /sys/nbia/sched_class_persisted_active_tms
+    chown system system /sys/nbia/sched_class_persisted_active_tms
+
+    chmod 0664 /sys/nbia/sched_early_upmigrate
+    chown system system /sys/nbia/sched_early_upmigrate
+
+    chmod 0664 /sys/nbia/sched_early_downmigrate
+    chown system system /sys/nbia/sched_early_downmigrate
+    #nubia add end
+
+on property:nubia.perf.tencent.game.mode=1
+    chmod 0666 /storage/emulated/0/Android/data/${nubia.perf.tencent.game.pkg}/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini
